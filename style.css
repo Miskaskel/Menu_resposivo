@@ -1,0 +1,214 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    text-align: center;
+}
+body{
+    height: 100vh;
+    position: relative;
+}
+/*
+Start MENU
+*/
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: #191e24f5;
+    align-items: center;
+    gap: 50px;
+    padding: 15px 50px;
+    box-shadow: 10px 10px 10px rgba(128, 128, 128, 0.548);
+    color: #fff;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+li{
+    width: 80px;
+}
+li a{
+    font-size: 1.1rem;
+    color: #fff;
+    cursor: pointer;
+    padding: 20px 5px;
+    transition: .5s;
+}
+li a:hover{
+    color: #f1c40f;
+    border-bottom: 3px solid #f1c40f;
+    transition: .1s;
+}
+.hide{
+    top: 120px;
+}
+/*
+Stop MENU
+*/
+
+/*
+Start Carrousel
+*/
+section.slider{
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    padding: 0 !important;
+    overflow: hidden;
+    z-index: 0;
+}
+.slider-content{
+    width: 400%;
+    height: auto;
+    display: flex;
+    
+}
+.slider-content input{
+    display: none;
+}
+.slide-box{
+    width: 25%;
+    height: 710px;
+    position: relative;
+    text-align: center;
+    transition: 0.5s;
+    
+}
+.slide-box img{
+    width: 100%;
+}
+.nav-manual, .nav-auto{
+    position: absolute;
+    width: 100%;
+    margin-top: 35%;
+    display: flex;
+    justify-content: center;
+}
+.nav-manual .manual-btn, .nav-auto div{
+    border: 1px solid #f1c40f;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s ;
+}
+.nav-manual .manual-btn:not(:last-child), .nav-auto div:not(:last-child){
+    margin-right: 10px;
+}
+.nav-manual .manual-btn:hover{
+    background-color: #f1c40f;
+}
+#radio1:checked ~ .nav-auto .auto-btn1, #radio2:checked ~ .nav-auto .auto-btn2, #radio3:checked ~ .nav-auto .auto-btn3{
+    background-color: #f1c40f;
+}
+#radio1:checked ~ .primeiro{
+    margin-left: 0%;
+}
+#radio2:checked ~ .primeiro{
+    margin-left: -25%;
+}
+#radio3:checked ~ .primeiro{
+    margin-left: -50%;
+}
+/*
+STOP CARROUSEL
+*/
+
+
+
+@media screen and (max-width: 768px) {
+    #hamburguer{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        cursor: pointer;
+        padding: 10px;
+        margin-right: -10px;
+    }#hamburguer{
+        position: relative;
+        width: 50px;
+        height: 50px;
+        background-color: #191e24f5;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.2s;
+    }
+    #hamburguer.active{
+        background: #f73313;
+    }
+    #hamburguer::after{
+        content: '';
+        position: absolute;
+        width: 28px;
+        height: 2px;
+        background-color: #fff;
+        transition: 0.2s;
+        transform: translateY(10px);
+    }
+    #hamburguer.active::after{
+        transform: translateY(0px) rotate(-45deg);
+    }
+    #hamburguer::before{
+        content: '';
+        position: absolute;
+        width: 28px;
+        height: 2px;
+        background-color: #fff;
+        transition: 0.2s;
+        transform: translateY(-10px);
+        box-shadow: 0 10px 0 #fff;
+    }
+    #hamburguer.active::before{
+        transform: translateY(0px) rotate(45deg);
+        box-shadow: 0 0 0 #fff;
+    }
+    nav{
+        position: relative;
+        padding: 15px 10px;
+    }
+    ul{
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        top: -300px;
+        right: 0;
+        background-color: #f1c40f;
+        padding: 35px 0;
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0 5px 5px rgba(128, 128, 128, 0.363);
+        z-index: 1;
+    }
+    li a{
+        color: rgba(12, 11, 11, 0.836);
+    }
+    li{
+        text-align: center;
+    }
+    li a:hover{
+        font-weight: bold;
+        color: #191e24f5;
+        border: none;
+        letter-spacing: 3px;
+    }
+    .nav-manual, .nav-auto{
+        margin-top: 35%;
+    }
+    .nav-manual .manual-btn, .nav-auto div{
+        padding: 5px;
+    }
+    .slide-box{
+        width: 25%;
+        height: 300px;
+        position: relative;
+        text-align: center;
+        transition: 0.5s;
+        
+    }
+}
